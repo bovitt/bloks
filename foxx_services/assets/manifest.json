@@ -5,8 +5,5 @@
     "main": "index.js",
     "scripts": {
         "setup": "scripts/setup.js"
-    },
-    "provides": {
-        "@bloks/auth": "1.0.0"
     }
 }

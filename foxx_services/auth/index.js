@@ -20,6 +20,7 @@ module.context.use(sessions);
 
 const auth = require("./utils/auth");
 const users = module.context.collection("users");
+exports.users = users;
 
 if (!users.firstExample({ username: "admin" })) {
     users.save({
@@ -178,8 +179,8 @@ router
         });
 
         const reset_query = db._query(aql`
-        UPDATE ${user._key} WITH {password: ${req.body.newpwd}} IN auth_users
-    `);
+        UPDATE ${user._key} WITH {password: ${crypto.sha512(req.body.newpwd)}} IN auth_users
+        `);
 
         res.send("Password Reset");
     })

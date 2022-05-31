@@ -5,5 +5,14 @@
     "main": "index.js",
     "scripts": {
         "setup": "scripts/setup.js"
+    },
+    "dependencies": {
+        "auth": {
+            "name": "@bloks/auth",
+            "version": "^1.0.0",
+            "description": "Authentication services and access to users document.",
+            "required": true,
+            "multiple": false
+        }
     }
 }
